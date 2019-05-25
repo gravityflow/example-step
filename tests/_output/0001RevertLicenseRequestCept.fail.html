@@ -1,0 +1,341 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
+	<title>inbox – Test Blog</title>
+<script type="text/javascript">var gf_vars = {"active":"Active","inactive":"Inactive","save":"Save","update":"Update","previousLabel":"Previous","selectFormat":"Select a format","editToViewAll":"5 of %d items shown. Edit field to view all","enterValue":"Enter a value","formTitle":"Untitled Form","formDescription":"We would love to hear from you! Please fill out this form and we will get in touch with you shortly.","formConfirmationMessage":"Thanks for contacting us! We will get in touch with you shortly.","buttonText":"Submit","loading":"Loading...","thisFieldIf":"this field if","thisSectionIf":"this section if","thisPage":"this page","thisFormButton":"this form button if","show":"Show","hide":"Hide","all":"All","any":"Any","ofTheFollowingMatch":"of the following match:","is":"is","isNot":"is not","greaterThan":"greater than","lessThan":"less than","contains":"contains","startsWith":"starts with","endsWith":"ends with","thisConfirmation":"Use this confirmation if","thisNotification":"Send this notification if","confirmationSave":"Save","confirmationSaving":"Saving...","confirmationAreYouSure":"Are you sure you wish to cancel these changes?","confirmationIssueSaving":"There was an issue saving this confirmation.","confirmationConfirmDelete":"Are you sure you wish to delete this confirmation?","confirmationIssueDeleting":"There was an issue deleting this confirmation.","confirmationConfirmDiscard":"There are unsaved changes to the current confirmation. Would you like to discard these changes?","confirmationDefaultName":"Untitled Confirmation","confirmationDefaultMessage":"Thanks for contacting us! We will get in touch with you shortly.","confirmationInvalidPageSelection":"Please select a page.","confirmationInvalidRedirect":"Please enter a URL.","confirmationInvalidName":"Please enter a confirmation name.","confirmationDeleteField":"Warning! Deleting this field will also delete all entry data associated with it. 'Cancel' to stop. 'OK' to delete.","conditionalLogicDependency":"Warning! This form contains conditional logic dependent upon this field. Deleting this field will deactivate those conditional logic rules and also delete all entry data associated with the field. 'OK' to delete, 'Cancel' to abort.","conditionalLogicDependencyChoice":"This form contains conditional logic dependent upon this choice. Are you sure you want to delete this choice? 'OK' to delete, 'Cancel' to abort.","conditionalLogicDependencyChoiceEdit":"This form contains conditional logic dependent upon this choice. Are you sure you want to modify this choice? 'OK' to delete, 'Cancel' to abort.","conditionalLogicDependencyAdminOnly":"This form contains conditional logic dependent upon this field. Are you sure you want to mark this field as Admin Only? 'OK' to confirm, 'Cancel' to abort.","mergeTagsTooltip":"&lt;h6&gt;Merge Tags&lt;\/h6&gt;Merge tags allow you to dynamically populate submitted field values in your form content wherever this merge tag icon is present.","baseUrl":"http:\/\/wordpress\/wp-content\/plugins\/gravityforms","gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2},"otherChoiceValue":"Other","isFormTrash":false,"currentlyAddingField":false,"visibilityOptions":[{"label":"Visible","value":"visible","description":"Default option. The field is visible when viewing the form."},{"label":"Hidden","value":"hidden","description":"The field is hidden when viewing the form. Useful when you require the functionality of this field but do not want the user to be able to see this field."},{"label":"Administrative","value":"administrative","description":"The field is only visible when administering submitted entries. The field is not visible or functional when viewing the form."}],"addFieldFilter":"Add a condition","removeFieldFilter":"Remove a condition","filterAndAny":"Include results if {0} match:","customChoices":"Custom Choices","predefinedChoices":"Predefined Choices"};</script><link rel="dns-prefetch" href="//s.w.org" />
+<link rel="alternate" type="application/rss+xml" title="Test Blog » Feed" href="http://wordpress/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Test Blog » Comments Feed" href="http://wordpress/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"wpemoji":"http:\/\/wordpress\/wp-includes\/js\/wp-emoji.js?ver=5.1.1","twemoji":"http:\/\/wordpress\/wp-includes\/js\/twemoji.js?ver=5.1.1"}};
+			/**
+ * @output wp-includes/js/wp-emoji-loader.js
+ */
+
+( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	// Create a canvas element for testing native browser support of emoji.
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext &amp;&amp; canvas.getContext( '2d' );
+
+	/**
+	 * Checks if two sets of Emoji characters render the same visually.
+	 *
+	 * @since 4.9.0
+	 *
+	 * @private
+	 *
+	 * @param {number[]} set1 Set of Emoji character codes.
+	 * @param {number[]} set2 Set of Emoji character codes.
+	 *
+	 * @return {boolean} True if the two sets render the same.
+	 */
+	function emojiSetsRenderIdentically( set1, set2 ) {
+		var stringFromCharCode = String.fromCharCode;
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set1 ), 0, 0 );
+		var rendered1 = canvas.toDataURL();
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set2 ), 0, 0 );
+		var rendered2 = canvas.toDataURL();
+
+		return rendered1 === rendered2;
+	}
+
+	/**
+	 * Detects if the browser supports rendering emoji or flag emoji.
+	 *
+	 * Flag emoji are a single glyph made of two characters, so some browsers
+	 * (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @private
+	 *
+	 * @param {string} type Whether to test for support of "flag" or "emoji".
+	 *
+	 * @return {boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var isIdentical;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+				 * so gives us an easy test for full support.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly ([U] + [N]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 55356, 56826, 55356, 56819 ],
+					[ 55356, 56826, 8203, 55356, 56819 ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for English flag compatibility. England is a country in the United Kingdom, it
+				 * does not have a two letter locale code but rather an five letter sub-division code.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447 ],
+					[ 55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447 ]
+				);
+
+				return ! isIdentical;
+			case 'emoji':
+				/*
+				 * She's the hero Emoji deserves, but not the one it needs right now.
+				 *
+				 * To test for support, try to render a new emoji (female superhero),
+				 * then compare it to how it would look if the browser doesn't render it correctly
+				 * (superhero + female sign) .
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[55358, 56760, 9792, 65039],
+					[55358, 56760, 8203, 9792, 65039]
+				);
+
+				return ! isIdentical;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Adds a script to the head of the document.
+	 *
+	 * @ignore
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param {Object} src The url where the script is located.
+	 * @return {void}
+	 */
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	/*
+	 * Tests the browser support for flag emojis and other emojis, and adjusts the
+	 * support settings accordingly.
+	 */
+	for( ii = 0; ii &lt; tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything &amp;&amp; settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag &amp;&amp; settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag &amp;&amp; ! settings.supports.flag;
+
+	// Sets DOMReady to false and assigns a ready function to settings.
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	// When the browser can not render everything we need to load a polyfill.
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		/*
+		 * Cross-browser version of adding a dom ready event.
+		 */
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji &amp;&amp; src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script><script src="http://wordpress/wp-includes/js/twemoji.js?ver=5.1.1" type="text/javascript" defer=""></script><script src="http://wordpress/wp-includes/js/wp-emoji.js?ver=5.1.1" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="http://wordpress/wp-includes/css/dist/block-library/style.css?ver=5.1.1" type="text/css" media="all" />
+<link rel="stylesheet" id="wp-block-library-theme-css" href="http://wordpress/wp-includes/css/dist/block-library/theme.css?ver=5.1.1" type="text/css" media="all" />
+<link rel="stylesheet" id="twentynineteen-style-css" href="http://wordpress/wp-content/themes/twentynineteen/style.css?ver=1.3" type="text/css" media="all" />
+<link rel="stylesheet" id="twentynineteen-print-style-css" href="http://wordpress/wp-content/themes/twentynineteen/print.css?ver=1.3" type="text/css" media="print" />
+<link rel="stylesheet" id="gform_admin-css" href="http://wordpress/wp-content/plugins/gravityforms/css/admin.css?ver=2.4.9.5" type="text/css" media="all" />
+<link rel="stylesheet" id="gravityflow_entry_detail-css" href="http://wordpress/wp-content/plugins/gravityflow/css/entry-detail.css?ver=2.5.5-dev" type="text/css" media="all" />
+<link rel="stylesheet" id="gravityflow_frontend_css-css" href="http://wordpress/wp-content/plugins/gravityflow/css/frontend.css?ver=2.5.5-dev" type="text/css" media="all" />
+<link rel="stylesheet" id="gravityflow_status-css" href="http://wordpress/wp-content/plugins/gravityflow/css/status.css?ver=2.5.5-dev" type="text/css" media="all" />
+<script type="text/javascript" src="http://wordpress/wp-includes/js/tw-sack.js?ver=1.6.1"></script>
+<script type="text/javascript" src="http://wordpress/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script>
+<script type="text/javascript" src="http://wordpress/wp-includes/js/jquery/jquery-migrate.js?ver=1.4.1"></script>
+<script type="text/javascript" src="http://wordpress/wp-content/plugins/gravityflow/js/entry-detail.js?ver=2.5.5-dev"></script>
+<script type="text/javascript" src="http://wordpress/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4"></script>
+<script type="text/javascript" src="http://wordpress/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4"></script>
+<script type="text/javascript">
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type="text/javascript" src="http://wordpress/wp-content/plugins/gravityforms/js/jquery.json.js?ver=2.4.9.5"></script>
+<script type="text/javascript" src="http://wordpress/wp-content/plugins/gravityforms/js/gravityforms.js?ver=2.4.9.5"></script>
+<script type="text/javascript" src="http://wordpress/wp-content/plugins/gravityforms/js/datepicker.js?ver=2.4.9.5"></script>
+<script type="text/javascript">
+/* &lt;![CDATA[ */
+var gravityflow_status_list_strings = {"ajaxurl":"http:\/\/wordpress\/wp-admin\/admin-ajax.php"};
+/* ]]&gt; */
+</script>
+<script type="text/javascript" src="http://wordpress/wp-content/plugins/gravityflow/js/status-list.js?ver=2.5.5-dev"></script>
+<script type="text/javascript" src="http://wordpress/wp-content/plugins/gravityforms/js/gf_field_filter.js?ver=2.4.9.5"></script>
+<script type="text/javascript" src="http://wordpress/wp-content/plugins/gravityflow/js/frontend.js?ver=2.5.5-dev"></script>
+<script type="text/javascript">
+/* &lt;![CDATA[ */
+var gravityflow_inbox_strings = {"restUrl":"http:\/\/wordpress\/wp-json\/","nonce":"09b819a2eb"};
+/* ]]&gt; */
+</script>
+<script type="text/javascript" src="http://wordpress/wp-content/plugins/gravityflow/js/inbox.js?ver=2.5.5-dev"></script>
+<link rel="https://api.w.org/" href="http://wordpress/wp-json/" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://wordpress/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://wordpress/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.1.1" />
+<link rel="canonical" href="http://wordpress/inbox/" />
+<link rel="shortlink" href="http://wordpress/?p=5" />
+<link rel="alternate" type="application/json+oembed" href="http://wordpress/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwordpress%2Finbox%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://wordpress/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwordpress%2Finbox%2F&amp;format=xml" />
+</head>
+
+<body class="page-template-default page page-id-5 wp-embed-responsive singular image-filters-enabled">
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header">
+
+			<div class="site-branding-container">
+				<div class="site-branding">
+
+								<p class="site-title"><a href="http://wordpress/" rel="home">Test Blog</a></p>
+			
+				<p class="site-description">
+				Just another WordPress site			</p>
+			</div><!-- .site-branding -->
+			</div><!-- .layout-wrap -->
+
+					</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+			
+<article id="post-5" class="post-5 page type-page status-publish hentry entry">
+		<header class="entry-header">
+		
+<h1 class="entry-title">inbox</h1>
+	</header>
+	
+	<div class="entry-content">
+						<div class="wrap gf_entry_wrap gravityflow_workflow_wrap gravityflow_workflow_detail">
+								<div id="gravityflow-no-pending-tasks-container">
+				<div id="gravityflow-no-pending-tasks-content">
+					<i class="fa fa-check-circle-o gravityflow-inbox-check"></i>
+					<br /><br />
+					No pending tasks				</div>
+
+			</div>
+						</div>
+				
+	</div><!-- .entry-content -->
+
+	</article><!-- #post-5 -->
+
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer">
+		
+	<aside class="widget-area" role="complementary" aria-label="Footer">
+							<div class="widget-column footer-widget-1">
+										</div>
+					</aside><!-- .widget-area -->
+
+		<div class="site-info">
+										<a class="site-name" href="http://wordpress/" rel="home">Test Blog</a>,
+						<a href="https://wordpress.org/" class="imprint">
+				Proudly powered by WordPress.			</a>
+								</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+
+</div><!-- #page -->
+
+<script type="text/javascript" src="http://wordpress/wp-includes/js/wp-embed.js?ver=5.1.1"></script>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&amp;&amp;document.getElementById&amp;&amp;window.addEventListener&amp;&amp;window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&amp;&amp;(t=document.getElementById(e))&amp;&amp;(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	
+
+
+</body></html>

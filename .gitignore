@@ -1,0 +1,10 @@
+node_modules
+.svn/
+codeception.yml
+tests/acceptance-tests/_output/
+.DS_Store
+
+.env
+tests/acceptance-tests/_support/_generated/
+tests/acceptance-tests/_support/_generated/AcceptanceTesterActions.php
+

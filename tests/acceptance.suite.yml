@@ -1,0 +1,35 @@
+# Codeception Test Suite Configuration
+
+# Suite for WordPress acceptance tests.
+# Perform tests using or simulating a browser.
+
+
+class_name: AcceptanceTester
+
+modules:
+    enabled:
+        - \Helper\Acceptance
+        - WPLoader
+        - WPWebDriver
+        - Asserts
+    config:
+        WPWebDriver:
+            host: chrome
+            url: 'http://wordpress'
+            browser: chrome
+            port: 4444
+            window_size: '1024x768'
+            restart: true
+            wait: 0
+            adminUsername: admin
+            adminPassword: password
+            adminPath: /wp-admin
+        WPLoader:
+            wpRootFolder: /wp-core
+            dbName: wordpress
+            dbHost: mysql
+            dbUser: wordpress
+            dbPassword: wordpress
+            tablePrefix: wp_
+            domain: wordpress
+
