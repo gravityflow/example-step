@@ -8,5 +8,3 @@ tests/acceptance-tests/_output/
 tests/_output
 tests/_support/_generated/
 tests/_support/_generated/AcceptanceTesterActions.php
-
-tests/_support/_generated/AcceptanceTesterActions.php
