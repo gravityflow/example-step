@@ -5,7 +5,7 @@ tests/acceptance-tests/_output/
 .DS_Store
 
 .env
-tests/acceptance-tests/_output
-tests/acceptance-tests/_support/_generated/
-tests/acceptance-tests/_support/_generated/AcceptanceTesterActions.php
+tests/_output
+tests/_support/_generated/
+tests/_support/_generated/AcceptanceTesterActions.php
 
