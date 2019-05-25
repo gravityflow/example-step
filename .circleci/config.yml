@@ -3,7 +3,7 @@ jobs:
   build:
     machine: true
     parallelism: 1
-    working_directory: ~/gravityflow
+    working_directory: ~/example-step
     steps:
       - checkout
       - run:
@@ -11,6 +11,6 @@ jobs:
           command: |
             docker-compose run --rm codeception run --html --xml -vvv
       - store_artifacts:
-          path: ~/gravityflow/tests/acceptance-tests/_output
+          path: ~/example-step/tests/acceptance-tests/_output
       - store_test_results:
-          path: ~/gravityflow/tests/acceptance-tests/_output
+          path: ~/example-step/tests/acceptance-tests/_output
