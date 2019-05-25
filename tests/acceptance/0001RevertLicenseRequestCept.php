@@ -10,7 +10,7 @@ $I->see( 'Updates and other fun stuff related to https://WordPress.org');
 
  */
 
-
+$I->deleteAllEntries();
 // Submit the form
 $I->amOnPage( '/license-request' );
 
@@ -24,7 +24,7 @@ $I->waitForText( 'Thanks for contacting us! We will get in touch with you shortl
 // The Approval step sends an email with the subject "New License Request from Jane"
 $I->amOnPage( '/new-license-request-from-jane' );
 $I->see( 'New license request from Jane' );
-$I->click( 'Entry' );
+$I->click( 'View Entry' );
 
 $I->waitForText( 'jane@test.com' );
 
