@@ -343,7 +343,7 @@
             "assignee_notification_reply_to": "",
             "assignee_notification_bcc": "",
             "assignee_notification_subject": "New license request from {Name (First):1.3}",
-            "assignee_notification_message": "New license request from {Name (First):1.3} {Name (Last):1.6}\r\n\r\nMessage:\r\n\r\n{Message:4}\r\n\r\n{workflow_approve_link}\r\n\r\n{workflow_reject_link}\r\n\r\n{workflow_entry_link}",
+            "assignee_notification_message": "New license request from {Name (First):1.3} {Name (Last):1.6}\r\n\r\nMessage:\r\n\r\n{Message:4}\r\n\r\n{workflow_approve_link}\r\n\r\n{workflow_reject_link}\r\n\r\n{workflow_entry_link: text=\"View Entry\"}",
             "assignee_notification_disable_autoformat": "0",
             "resend_assignee_emailEnable": "0",
             "resend_assignee_emailValue": "7",
