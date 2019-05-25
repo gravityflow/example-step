@@ -22,7 +22,7 @@ $I->click( 'Submit' );
 $I->waitForText( 'Thanks for contacting us! We will get in touch with you shortly.', 3 );
 
 // The Approval step sends an email with the subject "New License Request from Jane"
-$I->amOnPage( '/new-license-request-from-jane' );
+$I->amOnPage( '/email/new-license-request-from-jane' );
 $I->see( 'New license request from Jane' );
 $I->click( 'View Entry' );
 
@@ -31,7 +31,7 @@ $I->waitForText( 'jane@test.com' );
 $I->click( 'Revert' );
 
 
-$I->amOnPage( '/modify-request' );
+$I->amOnPage( '/email/modify-request' );
 $I->waitForText( 'Please give further details' );
 $I->click( 'Click here to edit your message' );
 $I->fillField( 'Message', 'Here are some more details' );

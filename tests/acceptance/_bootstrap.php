@@ -1,9 +1,6 @@
 <?php
 
 global $wp_rewrite, $wpdb;
-$wp_rewrite->set_permalink_structure( '/%postname%/' );
-$wp_rewrite->flush_rules();
-
 
 GFFormsModel::drop_tables();
 
@@ -90,3 +87,11 @@ function create_workflow_page( $page ) {
 
 	return $post_id ? $post_id : '';
 }
+
+add_action( 'init', 'sh_flush_rewrite_rules' );
+function sh_flush_rewrite_rules() {
+	global $wp_rewrite;
+	$wp_rewrite->flush_rules();
+	$wp_rewrite->set_permalink_structure( '/%postname%/' );
+}
+sh_flush_rewrite_rules();

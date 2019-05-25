@@ -26,12 +26,12 @@ $I->waitForText( 'Thanks for contacting us! We will get in touch with you shortl
 //$I->pause();
 
 // The Approval step sends an email with the subject "New License Request from Steve"
-$I->amOnPage( '/new-license-request-from-steve' );
+$I->amOnPage( '/email/new-license-request-from-steve' );
 $I->see( 'New license request from Steve' );
 $I->click( 'Approve' );
 
 // The Notification step sends an email with the subject "Your License Key"
-$I->amOnPage( 'your-license-key' );
+$I->amOnPage( '/email/your-license-key' );
 $I->waitForText("Your License Key" );
 $I->see( "your license key for the demo workflow" );
 

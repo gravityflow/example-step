@@ -46,7 +46,7 @@ class AcceptanceTester extends \Codeception\Actor {
 
 	public function deleteAllPosts() {
 		global $wpdb;
-		$wpdb->query("DELETE FROM wp_posts WHERE post_type='post'");
+		$wpdb->query("DELETE FROM wp_posts WHERE post_type='email'");
 	}
 
 	public function deleteAllEntries() {
