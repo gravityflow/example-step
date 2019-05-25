@@ -3,7 +3,7 @@ jobs:
   build:
     machine: true
     parallelism: 1
-    working_directory: ~/example-step
+    working_directory: ~/gravityflow
     steps:
       - checkout
       - run:
