@@ -11,6 +11,6 @@ jobs:
           command: |
             docker-compose run --rm codeception run --html --xml -vvv
       - store_artifacts:
-          path: ~/example-step/tests/acceptance-tests/_output
+          path: ~/example-step/tests/_output
       - store_test_results:
-          path: ~/example-step/tests/acceptance-tests/_output
+          path: ~/example-step/tests/_output
