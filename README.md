@@ -1,6 +1,8 @@
 Example Workflow Step
 =====================
 
+[![CircleCI](https://circleci.com/gh/gravityflow/example-step/tree/master.svg?style=svg&circle-token=4c044ef774d2e4dcc10ea847700defbb66479df7)](https://circleci.com/gh/gravityflow/example-step/tree/master)
+
 The repository demonstrates how to write a simple custom workflow step plus automated browser testing using Codeception & WP-Browser.
 
 `step.php` contains the custom workflow step as a plugin.
