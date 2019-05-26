@@ -24,9 +24,6 @@ modules:
             adminUsername: admin
             adminPassword: password
             adminPath: /wp-admin
-            capabilities:
-                speculative-resource-prefetching: 0
-
         WPLoader:
             wpRootFolder: /wp-core
             dbName: wordpress
