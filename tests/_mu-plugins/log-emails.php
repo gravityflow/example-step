@@ -60,10 +60,10 @@ function gravityflow_filter_gform_after_email( $is_success, $to, $subject, $mess
 }
 
 // Prevent do_pings from sending requests to all the links in the posts e.g. one-click approval links.
-/*
+
 if (isset($_GET['doing_wp_cron'])) {
 	remove_action('do_pings', 'do_all_pings');
 	wp_clear_scheduled_hook('do_pings');
 }
-*/
+
 
