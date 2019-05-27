@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class ExampleCest
+ */
 class ExampleCest {
 	public function _before( \AcceptanceTester $I ) {
 		$I->deleteAllPosts();
