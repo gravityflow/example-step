@@ -7,7 +7,7 @@ The repository demonstrates how to write a simple custom workflow step plus auto
 
 `step.php` contains the custom workflow step as a plugin.
 
-The `tests/acceptance` folder contains an example of an acceptance test.
+The `tests/acceptance` folder contains some examples of acceptance tests.
 
 ### Acceptance Tests
 
@@ -20,7 +20,7 @@ The `tests/acceptance` folder contains an example of an acceptance test.
 
 Copy `.env.sample` to `.env` and enter your Gravity Forms license key.
 
-Run bash `start.sh` from the tests folder to start the tests. 
+Run `docker-compose run codeception run -vv --html` from the root folder to start the tests. 
 
 Docker compose will create containers for the following services:
 
@@ -31,6 +31,6 @@ Docker compose will create containers for the following services:
 
 When the tests start the latest versions of Gravity Forms and Gravity Flow will be installed and activated.
 
-You can watch Chrome perform the tests via VNC on localhost:5900. On a Mac open vnc://localhost:5900 in Safari. Password: secret.
+You can watch Chrome perform the tests via VNC on `localhost:5900`. On a Mac open `vnc://localhost:5900` in Safari. Password: secret.
 
-An HTML report will be generated in the tests/_output folder.
+An HTML report will be generated in the `tests/_output` folder.
